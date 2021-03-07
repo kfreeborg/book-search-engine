@@ -11,9 +11,9 @@ export const LOGIN_USER = gql`
         bookCount
         savedBooks {
           bookId
-          title
-          description
           authors
+          description
+          title
           image
           link
         }
