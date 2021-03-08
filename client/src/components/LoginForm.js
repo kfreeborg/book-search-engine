@@ -42,10 +42,15 @@ const LoginForm = () => {
         variables: { ...userFormData },
       });
 
-      console.log(data);
+      if (error) {
+        throw new Error("something went wrong!");
+      }
+
+      console.log(data.user);
       Auth.login(data.login.token);
-    } catch (e) {
-      console.error(e);
+    } catch (err) {
+      console.error(err);
+      setShowAlert(true);
     }
 
     setUserFormData({
